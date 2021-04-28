@@ -4,21 +4,53 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>d3 Research Template</title>
+	<title>Shark Scores</title>
 
 	<!-- libs -->
 	<script src="js/lib/d3-4.0.js"></script>
-
-	<script src="js/lib/rcs.js"></script>
-
 	<!-- my code -->
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/glShark.css">
 
-	<script src="js/main.js"></script>
+	<script src="js/glShark-config.js"></script>
+
+	<script src="js/glShark.js"></script>
+
+	<script src="js/glShark-events.js"></script>
+	<script src="js/glShark-controller.js"></script>
+
+	<script src="js/model/model.js"></script>
+
+	<script src="js/views/glshark-hole-table.js"></script>
+
+
+
 </head>
 
 <body>
-	<div>TEST HEADER</div>
+	<div id="header">
+		<div class="header-label">Sharks</div>
+	</div>
+	<div id="display">
+		<div id="controls">
+			controls
+		</div>
+		<div id="hole-table" class="main-view">
+			<div id="hole-table-header">
+
+			</div>
+			<div id="hole-table-body-wrapper">
+				<div id="hole-table-body">
+
+				</div>
+			</div>
+		</div>
+		<div id="hole-inspector" class="main-view">
+
+		</div>
+	</div>
+	<div id="footer">
+		created by Mark Westerlund &copy<span id="year"></span>
+	</div>
 
 </body>
 

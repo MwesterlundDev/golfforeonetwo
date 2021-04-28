@@ -1,0 +1,16 @@
+--rh__primary-base: rgb(0,200,5);
+--rh__primary-hover: rgba(38,208,43,1);
+--rh__primary-pressed: rgba(64,214,68,1);
+--rh__primary-light-base: rgba(0,200,5,0.4);
+--rh__primary-lightest-base: rgba(0,200,5,0.2);
+--rh__semantic-positive-base: rgb(0,200,5);
+--rh__semantic-positive-light: rgba(0,200,5,0.4);
+--rh__semantic-negative-base: rgb(255,80,0);
+--rh__semantic-negative-light: rgba(255,80,0,0.4);
+--rh__semantic-success-base: rgb(0,200,5);
+--rh__semantic-success-light: rgba(0,200,5,0.4);
+--rh__semantic-error-base: rgb(255,80,0);
+--rh__semantic-error-light: rgba(255,80,0,0.4);
+--rh__semantic-scary-base: rgb(255,80,0);
+--rh__semantic-scary-light: rgba(255,80,0,0.4);
+--rh__primary-textOverlay: var(--rh__neutral-bg1);
