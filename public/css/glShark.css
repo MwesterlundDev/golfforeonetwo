@@ -21,6 +21,11 @@
 	src: url("../fonts/Roboto-Bold.ttf");
 }
 
+@font-face {
+	font-family: "Roboto-slab";
+	src: url("../fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+
 html,
 body {
 	margin: 0px;
@@ -144,7 +149,103 @@ body {
 
 
 #hole-inspector {
-	background: rgb(255, 0, 0);
+	/* background: rgb(255, 0, 0); */
+	overflow-y: auto;
+}
+
+#hi-hole-top {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+#hi-diagram {
+	width: 50%;
+	position: relative;
+	float: left;
+}
+
+#hi-diagram-img {
+	width: 100%;
+	position: relative;
+	float: left;
+}
+
+#hi-hole-info {
+	position: relative;
+	float: left;
+	width: 50%;
+	padding: 10px 15px;
+}
+
+#hi-hole-number {
+	position: relative;
+	float: left;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 30px;
+}
+
+#hi-hole-number-big {
+	font-size: 60px
+}
+
+.hi-hole-info-row {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 2px 0px;
+	border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.hole-label {
+	position: relative;
+	float: left;
+	width: 60%;
+	padding-top: 10px;
+	text-align: left;
+}
+
+.hole-data {
+	position: relative;
+	float: left;
+	font-size: 24px;
+	text-align: right;
+	width: 40%;
+
+}
+
+.hi-hole-quote {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+#hi-data-play {
+	padding: 10px 0px 0px 0px;
+}
+
+#hi-quip {
+	position: relative;
+	float: left;
+	font-family: 'Roboto-slab', serif;
+	width: 100%;
+	font-size: 20px;
+	padding: 10px 5px;
+}
+
+#hi-metrics {
+	position: relative;
+	float: left;	
+	width: 100%;
+	height: 1000px;
+}
+
+
+#back {
+	position: relative;
+	float: left;
+	background: rgb(60, 60, 60);
 }
 
 @media screen and (max-width: 1199px) {

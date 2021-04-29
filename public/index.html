@@ -17,10 +17,13 @@
 
 	<script src="js/glShark-events.js"></script>
 	<script src="js/glShark-controller.js"></script>
+	<script src="js/glShark-selection.js"></script>
 
 	<script src="js/model/model.js"></script>
 
 	<script src="js/views/glshark-hole-table.js"></script>
+	<script src="js/views/glshark-hole-inspector.js"></script>
+	<script src="js/views/glShark-controls.js"></script>
 
 
 
@@ -32,7 +35,9 @@
 	</div>
 	<div id="display">
 		<div id="controls">
-			controls
+			<div id="left-controls">
+				<div id="back">Back</div>
+			</div>
 		</div>
 		<div id="hole-table" class="main-view">
 			<div id="hole-table-header">
@@ -45,7 +50,45 @@
 			</div>
 		</div>
 		<div id="hole-inspector" class="main-view">
+			<div id="hi-hole-top">
 
+				<div id="hi-diagram">
+					<img id="hi-diagram-img" src="images/hole-1.jpg"/>
+				</div>
+				<div id="hi-hole-info">
+					<div id="hi-hole-number">
+						<div class="hole-label-qoute">Hole</div>
+						<div id="hi-hole-number-big">1</div>
+					</div>
+					<div class="hi-hole-info-row">
+						<div class="hole-label">Par</div>
+						<div id="hi-data-par" class="hole-data">4</div>
+					</div>
+					<div class="hi-hole-info-row">
+						<div class="hole-label">Yardage</div>
+						<div id="hi-data-yard" class="hole-data">4</div>
+					</div>
+					<div class="hi-hole-info-row">
+						<div class="hole-label">Handicap</div>
+						<div id="hi-data-handicap" class="hole-data">4</div>
+					</div>
+					<div class="hi-hole-info-row">
+						<div class="hole-label">Average</div>
+						<div id="hi-data-ave" class="hole-data">4</div>
+					</div>
+					<div class="hi-hole-info-row">
+						<div class="hole-label">Play it:</div>
+						<div id="hi-data-play" class="hi-hole-quote"></div>
+					</div>
+				</div>
+			</div>
+			<div id="hi-quip"></div>
+			<div id="hi-metrics">
+				<div id="hi-metrics-counts" class="hi-graph">
+					<div class="hi-metrics-header">Score Counts</div>
+					<svg id="hi-score-counts"></svg>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="footer">

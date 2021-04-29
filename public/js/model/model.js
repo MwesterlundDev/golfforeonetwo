@@ -2,8 +2,13 @@
 
 
 glShark.model = (function() {
+    const BLUE_TEES = "blueTees";
+    const WHITE_TEES = "whiteTees";
+
 
     let isMobile = false;
+    let playQuip = false;
+    let tees = BLUE_TEES;
 
     let holes = [];
 
@@ -17,8 +22,14 @@ glShark.model = (function() {
 
             glShark.events.send(glShark.events.APP_LOADED, {})
         })
+    }
 
-
+    const getHole = (number) => {
+        for (let i = 0; i < holes.length; i++) {
+            if(holes[i].number === number) {
+                return holes[i]
+            }
+        }
     }
 
     const getHoles = () => {
@@ -33,11 +44,21 @@ glShark.model = (function() {
         return isMobile;
     }
 
+    const getTees = () => {
+        return tees;
+    }
+
     return {
         init,
         getHoles,
         getMobile,
-        setMobile
+        getHole,
+        setMobile,
+        playQuip,
+        getTees,
+
+        BLUE_TEES,
+        WHITE_TEES
     }
 
 })();

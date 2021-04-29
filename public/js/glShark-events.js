@@ -12,6 +12,8 @@
     // APP EVENTS
     const APP_LOADED = 'appLoaded';
 
+    const HOLE_SELECTED = 'holeSelected';
+
     // EVENT METHODS
     /**
      * Registers a function to listen for an event to be dispatched.
@@ -80,6 +82,7 @@
 
     return {
         APP_LOADED,
+        HOLE_SELECTED,
 
         register,
         unregister,

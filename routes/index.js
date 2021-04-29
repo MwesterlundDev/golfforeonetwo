@@ -22,4 +22,24 @@ router.get('/hole-data', (req, res, next) => {
     res.json({holes: model.getHoleData()})
 
 })
+
+router.get('/round-data', (req, res, next) => {
+
+    res.json({rounds: model.getRoundData()})
+
+})
+
+router.get('/players', (req, res, next) => {
+
+    res.json({rounds: model.getRoundData()})
+
+})
+
+router.get('/teams', (req, res, next) => {
+
+    res.json({rounds: model.getRoundData()})
+
+})
+
+
 module.exports = router;

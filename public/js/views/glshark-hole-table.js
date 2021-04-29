@@ -3,14 +3,15 @@
 const HoleTable = function() {
 
     // temporary
-    let selectedHole = null;
-
     const selectedBackgroundColor = (glShark.model.getMobile()) ? d3.rgb(20, 20, 20) : d3.rgb(40, 40, 40);
     const selectedBorderColor = d3.rgb(255, 255, 255);
     const selectedPlainTextColor = d3.rgb(255, 255, 255);
 
     const baseBorderColor = d3.rgb(220, 220, 220);
     const basePlainTextColor = d3.rgb(220, 220, 220);
+
+    const blueColor = d3.rgb(0, 174, 239);
+    const whiteColor = d3.rgb(220, 220, 220);
 
     const columns = [
         {
@@ -37,13 +38,8 @@ const HoleTable = function() {
             isMobile: true,
             width: 200,
         },{
-            name: "Net",
+            name: "Net +/-",
             key: "net",
-            isMobile: true,
-            width: 200,
-        },{
-            name: "+/-",
-            key: "strokesGained",
             isMobile: true,
             width: 200,
         }
@@ -81,9 +77,14 @@ const HoleTable = function() {
 
         tableBody.selectAll(".hole-table-row").remove();
 
+        const selectedHole = glShark.selection.getSelectedHole();
+        let blues = (glShark.model.getTees() === glShark.model.BLUE_TEES);
+
+        console.log("table-selectedHole: ", selectedHole)
+
         const tableRows = tableBody.selectAll(".hole-table-row")
             .data(holes, (d) => {
-                return d.hole
+                return d.number
             })
             .enter()
 
@@ -91,23 +92,16 @@ const HoleTable = function() {
         const tableRowDiv = tableRows.append("div")
             .classed("hole-table-row", 1)
             .style("background", (d) => {
-                return (d.hole === selectedHole) ? selectedBackgroundColor : "transparent";
+                return (selectedHole && d.number === selectedHole.number) ? selectedBackgroundColor : "transparent";
             })
             .style("border-color", (d) => {
-                return (d.hole === selectedHole) ? selectedBorderColor : baseBorderColor;
+                return (selectedHole && d.number === selectedHole.number) ? selectedBorderColor : baseBorderColor;
             })
             .style("color", (d) => {
-                return (d.hole === selectedHole) ? selectedPlainTextColor : basePlainTextColor;
+                return (selectedHole && d.number === selectedHole.number) ? selectedPlainTextColor : basePlainTextColor;
             })
             .on('click', (d) => {
-
-                if (selectedHole == d.hole) {
-                    selectedHole = null;
-                } else {
-                    selectedHole = d.hole;
-                }
-
-                update();
+                glShark.selection.select(d.number, glShark.selection.HOLE)
             })
             
         tableRowDiv.append("div")
@@ -117,7 +111,7 @@ const HoleTable = function() {
                 return (100 / columns.length) + "%";
             })
             .text((d) => {
-                return d.hole;
+                return d.number;
             })
 
         tableRowDiv.append("div")
@@ -125,8 +119,9 @@ const HoleTable = function() {
             .style("width", (d) => {
                 return (100 / columns.length) + "%";
             })
+            .style("color", (blues) ? blueColor : whiteColor)
             .text((d) => {
-                return d.yards;
+                return (blues) ? d.blueYards : d.whiteYards;
             })
 
         tableRowDiv.append("div")
@@ -144,7 +139,16 @@ const HoleTable = function() {
                 return (100 / columns.length) + "%";
             })
             .text((d) => {
-                return d.average;
+                return Number(d.average).toFixed(2);
+            })
+
+        tableRowDiv.append("div")
+            .classed("hole-table-col", 1)
+            .style("width", (d) => {
+                return (100 / columns.length) + "%";
+            })
+            .text((d) => {
+                return ((d.averageNet > 0) ? "+" : "") +  Number(d.averageNet).toFixed(2);
             })
     }
 

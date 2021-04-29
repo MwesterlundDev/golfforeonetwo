@@ -11,6 +11,8 @@ window.onload = (event) => {
 	glShark.views = {};
 
 	glShark.views.holeTable = new HoleTable();
+	glShark.views.holeInspector = new HoleInspector();
+	glShark.views.controls = new Controls();
 
 	glShark.controller.init();
 
