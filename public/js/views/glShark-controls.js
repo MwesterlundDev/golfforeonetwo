@@ -1,6 +1,8 @@
 'use strict'
 const Controls = function() {
 
+    let msg = new SpeechSynthesisUtterance();
+
 
     const init = () => {
         
@@ -8,6 +10,11 @@ const Controls = function() {
             glShark.selection.select(null, glShark.selection.HOLE);
         })
 
+        d3.select("#footer").on("click", () => {
+
+            msg.text = "Don't be a Grimmie-ass bitch. Shut up or nut up. Stripe one down the fairway........Chicken Fucker";
+            window.speechSynthesis.speak(msg);
+        })
      
     }
 
