@@ -30,7 +30,7 @@ html,
 body {
 	margin: 0px;
 	font-family: "Roboto-light", sans-serif;
-	background: rgb(0,0,0);
+	background: #333;
 	color: rgb(220, 220, 220);
 	height: 100%;
 	width: 100%;
@@ -260,7 +260,9 @@ body {
 #city-boi {
 	margin: auto;
 	width: 50%;
-	background-color: #FF0000;
+	background: url("../images/dude/CGWGuy_v2-01.png");
+	background-size: contain;
+	height: 100%;
 	text-align: center;
 	font-weight: bold;
 	font-size: 64px;
